@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden bg-obsidian">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success | Chicano Music Festival</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#050505',
+                        stoneDark: '#121212',
+                        cmfTeal: '#4EBF96',
+                        cmfGreen: '#92BF65',
+                        cmfGold: '#D9BD32',
+                        cmfOrange: '#D98723'
+                    },
+                    fontFamily: {
+                        heading: ['Impact', 'sans-serif'], 
+                        body: ['Helvetica', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-glow-teal { text-shadow: 0 0 10px rgba(78, 191, 150, 0.8); }
+        .text-shadow-heavy { text-shadow: 2px 2px 4px rgba(0,0,0,0.9); }
+    </style>
+</head>
+<body class="text-white font-body overflow-x-hidden w-full max-w-[100vw] min-h-screen flex flex-col bg-obsidian relative">
+
+    <!-- FIXED GLOBAL BACKGROUND -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <img src="background 2.jpeg" alt="CMF Atmospheric Background" class="w-full h-full object-cover opacity-40">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-obsidian"></div>
+    </div>
+
+    <!-- CONTENT WRAPPER -->
+    <div class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 w-full">
+        
+        <!-- SUCCESS BANNER -->
+        <div class="max-w-2xl mx-auto w-full text-center">
+            <div class="bg-stoneDark/70 backdrop-blur-lg border-2 border-cmfTeal p-8 md:p-16 shadow-[0_0_30px_rgba(78,191,150,0.3)]">
+                <h2 class="text-4xl md:text-5xl font-heading tracking-widest uppercase text-white mb-6 text-glow-teal leading-tight">
+                    Message <span class="text-cmfGold">Received</span>
+                </h2>
+                <div class="w-24 h-1 bg-cmfTeal mx-auto mb-8"></div>
+                <p class="text-gray-300 font-heading tracking-widest uppercase text-lg md:text-xl text-shadow-heavy leading-relaxed mb-10">
+                    The CMF Executive Team will review your submission shortly.
+                </p>
+                <a href="about.html" class="inline-block bg-cmfGold text-obsidian font-heading tracking-widest uppercase text-lg px-10 py-4 hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(217,189,50,0.4)]">
+                    Return to Foundation
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
