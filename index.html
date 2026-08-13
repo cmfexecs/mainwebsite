@@ -65,9 +65,9 @@
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-obsidian"></div>
     </div>
 
-    <div id="landing-splash" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-obsidian/60 transition-opacity duration-700 ease-in-out">
-        <img id="landing-logo" src="CMF stonelogo.jpeg" alt="Chicano Music Festival" class="w-40 md:w-56 h-auto object-contain rounded-md drop-shadow-[0_0_25px_rgba(217,189,50,0.5)] opacity-0 -translate-y-24 transition-all duration-1000 ease-out">
-        <button id="landing-enter" class="mt-8 border-2 border-cmfGold text-cmfGold font-heading tracking-[0.3em] uppercase px-10 py-3 opacity-0 translate-y-4 transition-all duration-700 ease-out hover:bg-cmfGold hover:text-obsidian">
+    <div id="landing-splash" class="fixed inset-0 z-[100] flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out">
+        <img id="landing-logo" src="CMF stonelogo.jpeg" alt="Chicano Music Festival" class="w-64 md:w-[26rem] h-auto object-contain rounded-md drop-shadow-[0_0_35px_rgba(217,189,50,0.6)] opacity-0 -translate-y-32 transition-all duration-1000 ease-out">
+        <button id="landing-enter" class="animate-slow-pulse mt-10 border-2 border-cmfGold text-cmfGold font-heading tracking-[0.3em] uppercase px-10 py-3 opacity-0 translate-y-4 transition-all duration-700 ease-out hover:bg-cmfGold hover:text-obsidian">
             Enter
         </button>
     </div>
@@ -283,12 +283,12 @@
             document.body.style.overflow = 'hidden';
 
             setTimeout(() => {
-                landingLogo.classList.remove('opacity-0', '-translate-y-24');
-            }, 300);
+                landingLogo.classList.remove('opacity-0', '-translate-y-32');
+            }, 1500);
 
             setTimeout(() => {
                 landingEnter.classList.remove('opacity-0', 'translate-y-4');
-            }, 900);
+            }, 2200);
 
             landingEnter.addEventListener('click', () => {
                 splash.classList.add('opacity-0');
