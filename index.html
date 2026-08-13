@@ -72,7 +72,7 @@
         </button>
     </div>
 
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div id="floating-controls" class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 opacity-0 pointer-events-none transition-opacity duration-700 ease-in-out">
         <button id="audio-toggle" class="bg-stoneDark/80 backdrop-blur-md border border-gray-600 text-gray-300 p-2 rounded-full shadow-lg hover:text-cmfTeal hover:border-cmfTeal transition focus:outline-none flex items-center justify-center w-10 h-10">
             <svg id="icon-playing" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v18c-4.97 0-9-4.03-9-9s4.03-9 9-9zm2 14h2V7h-2v10zm-4 0h2V7h-2v10z"/></svg>
             <svg id="icon-muted" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L7.91 7.09H4v9.82h3.91L12 21V3zm2.5 5.5v7l4-3.5-4-3.5z"/></svg>
@@ -83,7 +83,7 @@
         </a>
     </div>
 
-    <div class="relative z-10 flex-grow flex flex-col w-full">
+    <div id="site-content" class="relative z-10 flex-grow flex flex-col w-full opacity-0 pointer-events-none transition-opacity duration-700 ease-in-out">
 
         <nav class="w-full absolute top-0 z-50 bg-transparent py-4 px-4 md:px-8 flex justify-between items-center pointer-events-none">
             <a href="index.html" class="relative z-50 pointer-events-auto">
@@ -291,8 +291,14 @@
             }, 2200);
 
             landingEnter.addEventListener('click', () => {
+                const siteContent = document.getElementById('site-content');
+                const floatingControls = document.getElementById('floating-controls');
+
                 splash.classList.add('opacity-0');
+                siteContent.classList.remove('opacity-0', 'pointer-events-none');
+                floatingControls.classList.remove('opacity-0', 'pointer-events-none');
                 document.body.style.overflow = '';
+
                 setTimeout(() => { splash.remove(); }, 700);
             });
         }
