@@ -113,7 +113,7 @@
                     Live <span class="text-cmfGold">Events</span>
                 </h1>
                 <div class="w-24 h-1 bg-cmfGold mx-auto mb-6"></div>
-                <button id="faq-trigger" class="font-heading tracking-widest uppercase text-xs px-5 py-2.5 border border-cmfTeal text-cmfTeal hover:bg-cmfTeal hover:text-obsidian transition duration-300 shadow-[0_0_10px_rgba(78,191,150,0.2)]">
+                <button type="button" data-poster="FAQ.png" data-poster-alt="CMF Entry Rules and FAQ" class="poster-trigger font-heading tracking-widest uppercase text-xs px-5 py-2.5 border border-cmfTeal text-cmfTeal hover:bg-cmfTeal hover:text-obsidian transition duration-300 shadow-[0_0_10px_rgba(78,191,150,0.2)]">
                     FAQ
                 </button>
             </div>
@@ -163,12 +163,21 @@
                 <div class="bg-stoneDark/70 backdrop-blur-lg border-2 border-cmfTeal shadow-[0_0_30px_rgba(78,191,150,0.25)] hover:shadow-[0_0_40px_rgba(78,191,150,0.4)] transition duration-500 p-6 md:p-10">
                     <div class="flex flex-col md:flex-row gap-8">
 
-                        <button type="button" data-poster="ITR MAIN.png" data-poster-alt="In The Room poster" class="poster-trigger group relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] overflow-hidden rounded-lg border border-cmfTeal/50 shadow-lg mx-auto md:mx-0">
-                            <img src="ITR MAIN.png" alt="In The Room poster" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
-                            <div class="absolute inset-0 bg-obsidian/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                                <span class="font-heading tracking-widest uppercase text-xs text-white border border-white px-3 py-1.5">View Poster</span>
-                            </div>
-                        </button>
+                        <div class="poster-carousel relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] mx-auto md:mx-0" data-images="ITR mainposter.png|ITR MAIN.png" data-alt="In The Room poster">
+                            <button type="button" class="poster-trigger group relative block w-full h-full overflow-hidden rounded-lg border border-cmfTeal/50 shadow-lg">
+                                <img class="carousel-img w-full h-full object-cover transition duration-500 group-hover:scale-105" src="ITR mainposter.png" alt="In The Room poster">
+                                <div class="absolute inset-0 bg-obsidian/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
+                                    <span class="font-heading tracking-widest uppercase text-xs text-white border border-white px-3 py-1.5">View Poster</span>
+                                </div>
+                            </button>
+                            <button type="button" class="carousel-prev absolute left-1.5 top-1/2 -translate-y-1/2 z-10 bg-obsidian/70 hover:bg-cmfTeal hover:text-obsidian text-white rounded-full p-1.5 transition" aria-label="Previous image">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                            </button>
+                            <button type="button" class="carousel-next absolute right-1.5 top-1/2 -translate-y-1/2 z-10 bg-obsidian/70 hover:bg-cmfTeal hover:text-obsidian text-white rounded-full p-1.5 transition" aria-label="Next image">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                            <div class="carousel-dots absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10"></div>
+                        </div>
 
                         <div class="flex-1 text-center md:text-left">
                             <h2 class="text-3xl md:text-4xl font-heading tracking-widest uppercase text-cmfTeal text-shadow-heavy mb-3">
@@ -178,7 +187,7 @@
                                 An evening with Mr. Lil One and Conejo! The audience will be taken from ONE TIME ONLY performances to a REAL conversation with two legends of the culture. Questions from the audience, never before heard stories, and two epic artists leaving everything on the stage. All in a secret location!!
                             </p>
                             <p class="text-gray-300 leading-relaxed mb-4">
-                                <strong class="text-cmfGold font-bold tracking-widest uppercase text-sm">Access:</strong> Presale only. Capacity is strictly capped to guarantee an intimate setting — there will be no tickets at the door, and this will sell out.
+                                <strong class="text-cmfGold font-bold tracking-widest uppercase text-sm">Access:</strong> 18+ (21+ for bar access). Presale only. Capacity is strictly capped to guarantee an intimate setting — there will be no tickets at the door, and this will sell out.
                             </p>
                             <p class="text-gray-300 leading-relaxed mb-6">
                                 <strong class="text-cmfGold font-bold tracking-widest uppercase text-sm">🔥 Bonus:</strong> Every ticket holder receives an exclusive signed poster, a collectible download card with 2 exclusive songs from Mr. Lil One and Conejo, and a few surprise gifts! 🔥
@@ -251,37 +260,12 @@
         </footer>
     </div>
 
-    <div id="poster-modal" class="hidden fixed inset-0 z-[90] bg-obsidian/90 backdrop-blur-md opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
-        <button id="poster-modal-close" class="absolute top-6 right-6 text-white hover:text-cmfGold transition p-2" aria-label="Close poster">
+    <div id="poster-modal" class="hidden fixed inset-0 z-[90] bg-obsidian/90 backdrop-blur-md opacity-0 transition-opacity duration-300 overflow-auto">
+        <button id="poster-modal-close" class="fixed top-6 right-6 z-[91] text-white hover:text-cmfGold transition p-2 bg-obsidian/60 rounded-full" aria-label="Close poster">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <img id="poster-modal-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain border-2 border-cmfGold shadow-[0_0_40px_rgba(217,189,50,0.4)]">
-    </div>
-
-    <div id="faq-modal" class="hidden fixed inset-0 z-[90] bg-obsidian/90 backdrop-blur-md opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
-        <div class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-stoneDark border-2 border-cmfTeal shadow-[0_0_40px_rgba(78,191,150,0.4)] p-6 md:p-10">
-            <button id="faq-modal-close" class="absolute top-4 right-4 text-white hover:text-cmfGold transition p-2" aria-label="Close FAQ">
-                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <h2 class="text-2xl md:text-3xl font-heading tracking-widest uppercase text-cmfTeal text-shadow-heavy mb-6">
-                FAQ
-            </h2>
-
-            <!-- FAQ TEMPLATE — copy one block below to add another question -->
-            <div class="space-y-6">
-                <div>
-                    <h3 class="font-heading tracking-widest uppercase text-sm text-cmfGold mb-1">[Placeholder question 1?]</h3>
-                    <p class="text-gray-300 leading-relaxed">[Placeholder answer — swap this copy in once it's ready.]</p>
-                </div>
-                <div>
-                    <h3 class="font-heading tracking-widest uppercase text-sm text-cmfGold mb-1">[Placeholder question 2?]</h3>
-                    <p class="text-gray-300 leading-relaxed">[Placeholder answer — swap this copy in once it's ready.]</p>
-                </div>
-                <div>
-                    <h3 class="font-heading tracking-widest uppercase text-sm text-cmfGold mb-1">[Placeholder question 3?]</h3>
-                    <p class="text-gray-300 leading-relaxed">[Placeholder answer — swap this copy in once it's ready.]</p>
-                </div>
-            </div>
+        <div class="min-h-full flex items-center justify-center p-4">
+            <img id="poster-modal-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain border-2 border-cmfGold shadow-[0_0_40px_rgba(217,189,50,0.4)] cursor-zoom-in">
         </div>
     </div>
 
@@ -331,7 +315,6 @@
         const posterModal = document.getElementById('poster-modal');
         const posterModalImg = document.getElementById('poster-modal-img');
         const posterModalClose = document.getElementById('poster-modal-close');
-        const posterTriggers = document.querySelectorAll('.poster-trigger');
 
         function openModal(modal) {
             modal.classList.remove('hidden');
@@ -345,12 +328,29 @@
             setTimeout(() => { modal.classList.add('hidden'); }, 300);
         }
 
-        posterTriggers.forEach((trigger) => {
+        function resetZoom() {
+            posterModalImg.classList.remove('max-w-none', 'max-h-none', 'cursor-zoom-out');
+            posterModalImg.classList.add('max-w-full', 'max-h-[85vh]', 'cursor-zoom-in');
+        }
+
+        function bindPosterTrigger(trigger) {
             trigger.addEventListener('click', () => {
                 posterModalImg.src = trigger.dataset.poster;
                 posterModalImg.alt = trigger.dataset.posterAlt || '';
+                resetZoom();
                 openModal(posterModal);
             });
+        }
+
+        document.querySelectorAll('.poster-trigger').forEach(bindPosterTrigger);
+
+        posterModalImg.addEventListener('click', () => {
+            posterModalImg.classList.toggle('max-w-full');
+            posterModalImg.classList.toggle('max-h-[85vh]');
+            posterModalImg.classList.toggle('max-w-none');
+            posterModalImg.classList.toggle('max-h-none');
+            posterModalImg.classList.toggle('cursor-zoom-in');
+            posterModalImg.classList.toggle('cursor-zoom-out');
         });
 
         posterModalClose.addEventListener('click', () => closeModal(posterModal));
@@ -358,20 +358,47 @@
             if (e.target === posterModal) closeModal(posterModal);
         });
 
-        const faqTrigger = document.getElementById('faq-trigger');
-        const faqModal = document.getElementById('faq-modal');
-        const faqModalClose = document.getElementById('faq-modal-close');
-
-        faqTrigger.addEventListener('click', () => openModal(faqModal));
-        faqModalClose.addEventListener('click', () => closeModal(faqModal));
-        faqModal.addEventListener('click', (e) => {
-            if (e.target === faqModal) closeModal(faqModal);
-        });
-
         document.addEventListener('keydown', (e) => {
             if (e.key !== 'Escape') return;
             if (!posterModal.classList.contains('hidden')) closeModal(posterModal);
-            if (!faqModal.classList.contains('hidden')) closeModal(faqModal);
+        });
+
+        document.querySelectorAll('.poster-carousel').forEach((carousel) => {
+            const images = carousel.dataset.images.split('|');
+            const altBase = carousel.dataset.alt || '';
+            const img = carousel.querySelector('.carousel-img');
+            const trigger = carousel.querySelector('.poster-trigger');
+            const dotsWrap = carousel.querySelector('.carousel-dots');
+            let index = 0;
+
+            images.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.className = 'w-1.5 h-1.5 rounded-full transition ' + (i === 0 ? 'bg-white' : 'bg-white/40');
+                dotsWrap.appendChild(dot);
+            });
+
+            function render() {
+                img.src = images[index];
+                const alt = `${altBase} (${index + 1} of ${images.length})`;
+                img.alt = alt;
+                trigger.dataset.poster = images[index];
+                trigger.dataset.posterAlt = alt;
+                Array.from(dotsWrap.children).forEach((dot, i) => {
+                    dot.className = 'w-1.5 h-1.5 rounded-full transition ' + (i === index ? 'bg-white' : 'bg-white/40');
+                });
+            }
+
+            carousel.querySelector('.carousel-prev').addEventListener('click', () => {
+                index = (index - 1 + images.length) % images.length;
+                render();
+            });
+
+            carousel.querySelector('.carousel-next').addEventListener('click', () => {
+                index = (index + 1) % images.length;
+                render();
+            });
+
+            render();
         });
     </script>
 </body>
