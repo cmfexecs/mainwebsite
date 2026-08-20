@@ -129,8 +129,8 @@
                     <div class="flex flex-col md:flex-row gap-8">
 
                         <div class="poster-carousel relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] mx-auto md:mx-0" data-images="ITR mainposter.png|ITR MAIN.png" data-alt="In The Room poster">
-                            <button type="button" class="poster-trigger group relative block w-full h-full overflow-hidden rounded-lg border border-cmfTeal/50 shadow-lg">
-                                <img class="carousel-img w-full h-full object-cover transition duration-500 group-hover:scale-105" src="ITR mainposter.png" alt="In The Room poster">
+                            <button type="button" class="poster-trigger group relative block w-full h-full overflow-hidden rounded-lg border border-cmfTeal/50 bg-obsidian shadow-lg">
+                                <img class="carousel-img w-full h-full object-contain transition duration-500 group-hover:scale-105" src="ITR mainposter.png" alt="In The Room poster">
                                 <div class="absolute inset-0 bg-obsidian/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center pointer-events-none">
                                     <span class="font-heading tracking-widest uppercase text-xs text-white border border-white px-3 py-1.5">View Poster</span>
                                 </div>
@@ -146,7 +146,7 @@
 
                         <div class="flex-1 text-center md:text-left">
                             <h2 class="text-3xl md:text-4xl font-heading tracking-widest uppercase text-cmfTeal text-shadow-heavy mb-3">
-                                In The Room
+                                In The Room #1
                             </h2>
                             <p class="text-gray-300 leading-relaxed mb-4">
                                 An evening with Mr. Lil One and Conejo! The audience will be taken from ONE TIME ONLY performances to a REAL conversation with two legends of the culture. Questions from the audience, never before heard stories, and two epic artists leaving everything on the stage. All in a secret location!!
@@ -178,8 +178,8 @@
                 <div class="bg-stoneDark/70 backdrop-blur-lg border-2 border-cmfOrange shadow-[0_0_30px_rgba(217,135,35,0.25)] hover:shadow-[0_0_40px_rgba(217,135,35,0.4)] transition duration-500 p-6 md:p-10">
                     <div class="flex flex-col md:flex-row gap-8">
 
-                        <button type="button" data-poster="oldiesforevertour.png" data-poster-alt="The Oldies Forever Tour poster" class="poster-trigger group relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] overflow-hidden rounded-lg border border-cmfOrange/50 shadow-lg mx-auto md:mx-0">
-                            <img src="oldiesforevertour.png" alt="The Oldies Forever Tour poster" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <button type="button" data-poster="oldiesforevertour.png" data-poster-alt="The Oldies Forever Tour poster" class="poster-trigger group relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] overflow-hidden rounded-lg border border-cmfOrange/50 bg-obsidian shadow-lg mx-auto md:mx-0">
+                            <img src="oldiesforevertour.png" alt="The Oldies Forever Tour poster" class="w-full h-full object-contain transition duration-500 group-hover:scale-105">
                             <div class="absolute inset-0 bg-obsidian/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                                 <span class="font-heading tracking-widest uppercase text-xs text-white border border-white px-3 py-1.5">View Poster</span>
                             </div>
@@ -213,8 +213,8 @@
                 <div class="bg-stoneDark/70 backdrop-blur-lg border-2 border-cmfGold shadow-[0_0_30px_rgba(217,189,50,0.25)] hover:shadow-[0_0_40px_rgba(217,189,50,0.4)] transition duration-500 p-6 md:p-10">
                     <div class="flex flex-col md:flex-row gap-8">
 
-                        <button type="button" data-poster="CMFLA.png" data-poster-alt="The Chicano Music Festival poster" class="poster-trigger group relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] overflow-hidden rounded-lg border border-cmfGold/50 shadow-lg mx-auto md:mx-0">
-                            <img src="CMFLA.png" alt="The Chicano Music Festival poster" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                        <button type="button" data-poster="CMFLA.png" data-poster-alt="The Chicano Music Festival poster" class="poster-trigger group relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] overflow-hidden rounded-lg border border-cmfGold/50 bg-obsidian shadow-lg mx-auto md:mx-0">
+                            <img src="CMFLA.png" alt="The Chicano Music Festival poster" class="w-full h-full object-contain transition duration-500 group-hover:scale-105">
                             <div class="absolute inset-0 bg-obsidian/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
                                 <span class="font-heading tracking-widest uppercase text-xs text-white border border-white px-3 py-1.5">View Poster</span>
                             </div>
@@ -263,6 +263,12 @@
     <div id="poster-modal" class="hidden fixed inset-0 z-[90] bg-obsidian/90 backdrop-blur-md opacity-0 transition-opacity duration-300 overflow-auto">
         <button id="poster-modal-close" class="fixed top-6 right-6 z-[91] text-white hover:text-cmfGold transition p-2 bg-obsidian/60 rounded-full" aria-label="Close poster">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <button id="poster-modal-prev" class="hidden fixed left-4 top-1/2 -translate-y-1/2 z-[91] text-white hover:text-cmfGold transition p-2 bg-obsidian/60 rounded-full" aria-label="Previous image">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button id="poster-modal-next" class="hidden fixed right-4 top-1/2 -translate-y-1/2 z-[91] text-white hover:text-cmfGold transition p-2 bg-obsidian/60 rounded-full" aria-label="Next image">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
         </button>
         <div class="min-h-full flex items-center justify-center p-4">
             <img id="poster-modal-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain border-2 border-cmfGold shadow-[0_0_40px_rgba(217,189,50,0.4)] cursor-zoom-in">
@@ -315,6 +321,9 @@
         const posterModal = document.getElementById('poster-modal');
         const posterModalImg = document.getElementById('poster-modal-img');
         const posterModalClose = document.getElementById('poster-modal-close');
+        const posterModalPrev = document.getElementById('poster-modal-prev');
+        const posterModalNext = document.getElementById('poster-modal-next');
+        let activeCarousel = null;
 
         function openModal(modal) {
             modal.classList.remove('hidden');
@@ -329,7 +338,7 @@
         }
 
         function resetZoom() {
-            posterModalImg.classList.remove('max-w-none', 'max-h-none', 'cursor-zoom-out');
+            posterModalImg.classList.remove('max-w-[120vw]', 'max-h-[120vh]', 'cursor-zoom-out');
             posterModalImg.classList.add('max-w-full', 'max-h-[85vh]', 'cursor-zoom-in');
         }
 
@@ -338,6 +347,9 @@
                 posterModalImg.src = trigger.dataset.poster;
                 posterModalImg.alt = trigger.dataset.posterAlt || '';
                 resetZoom();
+                activeCarousel = trigger.closest('.poster-carousel');
+                posterModalPrev.classList.toggle('hidden', !activeCarousel);
+                posterModalNext.classList.toggle('hidden', !activeCarousel);
                 openModal(posterModal);
             });
         }
@@ -347,11 +359,24 @@
         posterModalImg.addEventListener('click', () => {
             posterModalImg.classList.toggle('max-w-full');
             posterModalImg.classList.toggle('max-h-[85vh]');
-            posterModalImg.classList.toggle('max-w-none');
-            posterModalImg.classList.toggle('max-h-none');
+            posterModalImg.classList.toggle('max-w-[120vw]');
+            posterModalImg.classList.toggle('max-h-[120vh]');
             posterModalImg.classList.toggle('cursor-zoom-in');
             posterModalImg.classList.toggle('cursor-zoom-out');
         });
+
+        function goToCarouselImage(direction) {
+            if (!activeCarousel) return;
+            const btnSelector = direction === 'next' ? '.carousel-next' : '.carousel-prev';
+            activeCarousel.querySelector(btnSelector).click();
+            const trigger = activeCarousel.querySelector('.poster-trigger');
+            posterModalImg.src = trigger.dataset.poster;
+            posterModalImg.alt = trigger.dataset.posterAlt || '';
+            resetZoom();
+        }
+
+        posterModalPrev.addEventListener('click', () => goToCarouselImage('prev'));
+        posterModalNext.addEventListener('click', () => goToCarouselImage('next'));
 
         posterModalClose.addEventListener('click', () => closeModal(posterModal));
         posterModal.addEventListener('click', (e) => {
@@ -359,8 +384,10 @@
         });
 
         document.addEventListener('keydown', (e) => {
-            if (e.key !== 'Escape') return;
-            if (!posterModal.classList.contains('hidden')) closeModal(posterModal);
+            if (posterModal.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeModal(posterModal);
+            if (e.key === 'ArrowLeft') goToCarouselImage('prev');
+            if (e.key === 'ArrowRight') goToCarouselImage('next');
         });
 
         document.querySelectorAll('.poster-carousel').forEach((carousel) => {
