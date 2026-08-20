@@ -106,19 +106,119 @@
             </div>
         </div>
 
-        <main class="flex-grow flex flex-col items-center justify-center pt-32 md:pt-40 pb-20 px-4 lg:px-20 w-full overflow-hidden">
-            
-            <div class="max-w-4xl mx-auto w-full text-center">
-                <div class="bg-stoneDark/70 backdrop-blur-lg border-2 border-cmfGold p-8 md:p-16 shadow-[0_0_30px_rgba(217,189,50,0.3)] hover:shadow-[0_0_50px_rgba(217,189,50,0.5)] transition duration-500">
-                    <h2 class="text-4xl md:text-6xl font-heading tracking-widest uppercase text-white mb-6 text-shadow-heavy leading-tight">
-                        Check Back <span class="text-cmfTeal">Soon</span>
-                    </h2>
-                    <div class="w-32 h-1 bg-cmfGold mx-auto mb-8"></div>
-                    <p class="text-gray-300 font-heading tracking-widest uppercase text-xl md:text-3xl text-shadow-heavy leading-relaxed">
-                        For the latest events presented by the CMF Team!
-                    </p>
-                </div>
+        <main class="flex-grow flex flex-col items-center pt-32 md:pt-40 pb-20 px-4 lg:px-8 w-full">
+
+            <div class="max-w-3xl mx-auto w-full text-center mb-4">
+                <h1 class="text-4xl md:text-6xl font-heading tracking-widest uppercase text-white mb-4 text-shadow-heavy leading-tight">
+                    Live <span class="text-cmfGold">Events</span>
+                </h1>
+                <div class="w-24 h-1 bg-cmfGold mx-auto mb-6"></div>
+                <button id="faq-trigger" class="font-heading tracking-widest uppercase text-xs px-5 py-2.5 border border-cmfTeal text-cmfTeal hover:bg-cmfTeal hover:text-obsidian transition duration-300 shadow-[0_0_10px_rgba(78,191,150,0.2)]">
+                    FAQ
+                </button>
             </div>
+
+            <!-- ================= EVENT SECTION TEMPLATE =================
+                 Copy one of these <section> blocks to add a new pillar event.
+                 To add more ticket links (extra tour stops) to an event,
+                 copy one <a> tag inside that event's "Tickets" list.
+            ============================================================= -->
+
+            <section class="w-full max-w-5xl mx-auto mt-10">
+                <div class="bg-stoneDark/70 backdrop-blur-lg border-2 border-cmfGold shadow-[0_0_30px_rgba(217,189,50,0.25)] hover:shadow-[0_0_40px_rgba(217,189,50,0.4)] transition duration-500 p-6 md:p-10">
+                    <div class="flex flex-col md:flex-row gap-8">
+
+                        <button type="button" data-poster="festpic1.jpeg" data-poster-alt="The Chicano Music Festival poster" class="poster-trigger group relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] overflow-hidden rounded-lg border border-cmfGold/50 shadow-lg mx-auto md:mx-0">
+                            <img src="festpic1.jpeg" alt="The Chicano Music Festival poster" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-obsidian/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <span class="font-heading tracking-widest uppercase text-xs text-white border border-white px-3 py-1.5">View Poster</span>
+                            </div>
+                        </button>
+
+                        <div class="flex-1 text-center md:text-left">
+                            <h2 class="text-3xl md:text-4xl font-heading tracking-widest uppercase text-cmfGold text-shadow-heavy mb-3">
+                                The Chicano Music Festival
+                            </h2>
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                [Placeholder description — the flagship CMF summit: legacy acts, live art, lowriders, and the full cultural experience. Swap this copy in once it's ready.]
+                            </p>
+
+                            <h3 class="font-heading tracking-widest uppercase text-sm text-cmfTeal mb-3">Tickets</h3>
+                            <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                                <a href="https://events.ticketleap.com/events/chicanomusicfest" target="_blank" class="bg-cmfGold text-obsidian font-heading tracking-widest uppercase text-xs px-5 py-2.5 hover:bg-white transition shadow-[0_0_10px_rgba(217,189,50,0.4)]">
+                                    San Diego — Get Tickets
+                                </a>
+                                <!-- <a href="#" target="_blank" class="bg-cmfGold text-obsidian font-heading tracking-widest uppercase text-xs px-5 py-2.5 hover:bg-white transition shadow-[0_0_10px_rgba(217,189,50,0.4)]">Next City — Get Tickets</a> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-full max-w-5xl mx-auto mt-10">
+                <div class="bg-stoneDark/70 backdrop-blur-lg border-2 border-cmfTeal shadow-[0_0_30px_rgba(78,191,150,0.25)] hover:shadow-[0_0_40px_rgba(78,191,150,0.4)] transition duration-500 p-6 md:p-10">
+                    <div class="flex flex-col md:flex-row gap-8">
+
+                        <button type="button" data-poster="con&temp.jpeg" data-poster-alt="In The Room poster" class="poster-trigger group relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] overflow-hidden rounded-lg border border-cmfTeal/50 shadow-lg mx-auto md:mx-0">
+                            <img src="con&temp.jpeg" alt="In The Room poster" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-obsidian/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <span class="font-heading tracking-widest uppercase text-xs text-white border border-white px-3 py-1.5">View Poster</span>
+                            </div>
+                        </button>
+
+                        <div class="flex-1 text-center md:text-left">
+                            <h2 class="text-3xl md:text-4xl font-heading tracking-widest uppercase text-cmfTeal text-shadow-heavy mb-3">
+                                In The Room
+                            </h2>
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                [Placeholder description — an intimate, up-close series spotlighting the Evolution side of CMF. Swap this copy in once it's ready.]
+                            </p>
+
+                            <h3 class="font-heading tracking-widest uppercase text-sm text-cmfGold mb-3">Tickets</h3>
+                            <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                                <a href="#" target="_blank" class="bg-cmfTeal text-obsidian font-heading tracking-widest uppercase text-xs px-5 py-2.5 hover:bg-white transition shadow-[0_0_10px_rgba(78,191,150,0.4)]">
+                                    Get Tickets
+                                </a>
+                                <!-- <a href="#" target="_blank" class="bg-cmfTeal text-obsidian font-heading tracking-widest uppercase text-xs px-5 py-2.5 hover:bg-white transition shadow-[0_0_10px_rgba(78,191,150,0.4)]">Next City — Get Tickets</a> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="w-full max-w-5xl mx-auto mt-10">
+                <div class="bg-stoneDark/70 backdrop-blur-lg border-2 border-cmfOrange shadow-[0_0_30px_rgba(217,135,35,0.25)] hover:shadow-[0_0_40px_rgba(217,135,35,0.4)] transition duration-500 p-6 md:p-10">
+                    <div class="flex flex-col md:flex-row gap-8">
+
+                        <button type="button" data-poster="babybash1.jpeg" data-poster-alt="The Oldies Forever Tour poster" class="poster-trigger group relative w-full md:w-56 lg:w-64 shrink-0 aspect-[3/4] overflow-hidden rounded-lg border border-cmfOrange/50 shadow-lg mx-auto md:mx-0">
+                            <img src="babybash1.jpeg" alt="The Oldies Forever Tour poster" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                            <div class="absolute inset-0 bg-obsidian/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <span class="font-heading tracking-widest uppercase text-xs text-white border border-white px-3 py-1.5">View Poster</span>
+                            </div>
+                        </button>
+
+                        <div class="flex-1 text-center md:text-left">
+                            <h2 class="text-3xl md:text-4xl font-heading tracking-widest uppercase text-cmfOrange text-shadow-heavy mb-3">
+                                The Oldies Forever Tour
+                            </h2>
+                            <p class="text-gray-300 leading-relaxed mb-6">
+                                [Placeholder description — a traveling celebration of legacy acts and the sound that started it all. Swap this copy in once it's ready.]
+                            </p>
+
+                            <h3 class="font-heading tracking-widest uppercase text-sm text-cmfGold mb-3">Tickets</h3>
+                            <div class="flex flex-wrap justify-center md:justify-start gap-3">
+                                <a href="#" target="_blank" class="bg-cmfOrange text-obsidian font-heading tracking-widest uppercase text-xs px-5 py-2.5 hover:bg-white transition shadow-[0_0_10px_rgba(217,135,35,0.4)]">
+                                    Tour Stop 1 — Get Tickets
+                                </a>
+                                <!-- <a href="#" target="_blank" class="bg-cmfOrange text-obsidian font-heading tracking-widest uppercase text-xs px-5 py-2.5 hover:bg-white transition shadow-[0_0_10px_rgba(217,135,35,0.4)]">Tour Stop 2 — Get Tickets</a> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
 
         </main>
 
@@ -134,6 +234,40 @@
                 </div>
             </div>
         </footer>
+    </div>
+
+    <div id="poster-modal" class="hidden fixed inset-0 z-[90] bg-obsidian/90 backdrop-blur-md opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <button id="poster-modal-close" class="absolute top-6 right-6 text-white hover:text-cmfGold transition p-2" aria-label="Close poster">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <img id="poster-modal-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain border-2 border-cmfGold shadow-[0_0_40px_rgba(217,189,50,0.4)]">
+    </div>
+
+    <div id="faq-modal" class="hidden fixed inset-0 z-[90] bg-obsidian/90 backdrop-blur-md opacity-0 transition-opacity duration-300 flex items-center justify-center p-4">
+        <div class="relative w-full max-w-2xl max-h-[85vh] overflow-y-auto bg-stoneDark border-2 border-cmfTeal shadow-[0_0_40px_rgba(78,191,150,0.4)] p-6 md:p-10">
+            <button id="faq-modal-close" class="absolute top-4 right-4 text-white hover:text-cmfGold transition p-2" aria-label="Close FAQ">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <h2 class="text-2xl md:text-3xl font-heading tracking-widest uppercase text-cmfTeal text-shadow-heavy mb-6">
+                FAQ
+            </h2>
+
+            <!-- FAQ TEMPLATE — copy one block below to add another question -->
+            <div class="space-y-6">
+                <div>
+                    <h3 class="font-heading tracking-widest uppercase text-sm text-cmfGold mb-1">[Placeholder question 1?]</h3>
+                    <p class="text-gray-300 leading-relaxed">[Placeholder answer — swap this copy in once it's ready.]</p>
+                </div>
+                <div>
+                    <h3 class="font-heading tracking-widest uppercase text-sm text-cmfGold mb-1">[Placeholder question 2?]</h3>
+                    <p class="text-gray-300 leading-relaxed">[Placeholder answer — swap this copy in once it's ready.]</p>
+                </div>
+                <div>
+                    <h3 class="font-heading tracking-widest uppercase text-sm text-cmfGold mb-1">[Placeholder question 3?]</h3>
+                    <p class="text-gray-300 leading-relaxed">[Placeholder answer — swap this copy in once it's ready.]</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -177,6 +311,52 @@
                 iconPlaying.classList.add('hidden');
                 iconMuted.classList.remove('hidden');
             }
+        });
+
+        const posterModal = document.getElementById('poster-modal');
+        const posterModalImg = document.getElementById('poster-modal-img');
+        const posterModalClose = document.getElementById('poster-modal-close');
+        const posterTriggers = document.querySelectorAll('.poster-trigger');
+
+        function openModal(modal) {
+            modal.classList.remove('hidden');
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modal) {
+            modal.classList.add('opacity-0');
+            document.body.style.overflow = '';
+            setTimeout(() => { modal.classList.add('hidden'); }, 300);
+        }
+
+        posterTriggers.forEach((trigger) => {
+            trigger.addEventListener('click', () => {
+                posterModalImg.src = trigger.dataset.poster;
+                posterModalImg.alt = trigger.dataset.posterAlt || '';
+                openModal(posterModal);
+            });
+        });
+
+        posterModalClose.addEventListener('click', () => closeModal(posterModal));
+        posterModal.addEventListener('click', (e) => {
+            if (e.target === posterModal) closeModal(posterModal);
+        });
+
+        const faqTrigger = document.getElementById('faq-trigger');
+        const faqModal = document.getElementById('faq-modal');
+        const faqModalClose = document.getElementById('faq-modal-close');
+
+        faqTrigger.addEventListener('click', () => openModal(faqModal));
+        faqModalClose.addEventListener('click', () => closeModal(faqModal));
+        faqModal.addEventListener('click', (e) => {
+            if (e.target === faqModal) closeModal(faqModal);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key !== 'Escape') return;
+            if (!posterModal.classList.contains('hidden')) closeModal(posterModal);
+            if (!faqModal.classList.contains('hidden')) closeModal(faqModal);
         });
     </script>
 </body>
